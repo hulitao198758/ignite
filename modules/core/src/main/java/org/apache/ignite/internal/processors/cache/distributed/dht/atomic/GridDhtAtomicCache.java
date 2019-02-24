@@ -3600,11 +3600,11 @@ public class GridDhtAtomicCache<K, V> extends GridDhtCacheAdapter<K, V> {
         try {
             List<SearchRowEx<AtomicCacheUpdateClosure>> locked = new ArrayList<>(batchSize);
 
-            SearchRowEx<AtomicCacheUpdateClosure> prev = null;
-
-            GridDhtLocalPartition part = null;
-
             while (true) {
+                SearchRowEx<AtomicCacheUpdateClosure> prev = null;
+
+                GridDhtLocalPartition part = null;
+
                 for (int i = 0; i < batchSize; i++) {
                     int idx = batchStart + i;
 
